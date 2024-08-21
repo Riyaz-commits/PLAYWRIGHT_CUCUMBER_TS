@@ -1,8 +1,8 @@
-import {LaunchOptions , chromium} from "playwright-core"
+import {LaunchOptions , chromium , firefox , webkit} from "playwright-core"
 
 
 const options : LaunchOptions ={
-    headless: false
+    headless: true
 }
 export const invokeBrowser = function ()
 {
@@ -12,14 +12,16 @@ const browserTYpe = process.env.BROWSER;
 switch(browserTYpe)
 {
     case "chrome":
-        chromium.launch(options);
-        break;
+        return  chromium.launch(options);
+        
         case "webkit":
-            chromium.launch(options);
-            break;
+          return  webkit.launch(options);
+          
             case "firefox":
-            chromium.launch(options);
-            break;
+                return  firefox.launch(options);
+           
+            default:
+                throw new Error("Invalid Browser provided "+browserTYpe)
 }
 
 }
