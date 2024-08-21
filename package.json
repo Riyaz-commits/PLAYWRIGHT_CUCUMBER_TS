@@ -1,0 +1,27 @@
+{
+  "name": "playwright_cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   
+    "test": "cucumber-js test || true ",
+    "posttest": "npx ts-node src/helper/report.ts",
+    "test:withpost": "npm test || npm run posttest",
+    "test:failed": "cucumber-js -p rerun @rerun.txt || npm run posttest",
+    "test:rerun": "npm run test:failed && npm run posttest || npm run posttest"
+  },
+  "keywords": [],
+  "author": "Riyaz Basha Shaik",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.4.1",
+    "multiple-cucumber-html-reporter": "^3.7.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
