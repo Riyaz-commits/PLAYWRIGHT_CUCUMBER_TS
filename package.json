@@ -7,7 +7,7 @@
    
     "test": "cucumber-js test || true ",
     "posttest": "npx ts-node src/helper/report.ts",
-    "test:withpost": "npm test || npm run posttest",
+    "test:withreport": "npm test || npm run posttest",
     "test:failed": "cucumber-js -p rerun @rerun.txt || npm run posttest",
     "test:rerun": "npm run test:failed && npm run posttest || npm run posttest"
   },
