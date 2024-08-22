@@ -25,8 +25,23 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+      
+    - name: Print the current working directory
+      run: pwd
+
+    - name: Print path to package.json
+      run: find . -name 'package.json'
+
+    - name: Print directory structure
+      run: ls -la
+
+    - name: Print path to package.json
+      run: find . -name 'package.json'
 
     - name: List files in the working directory
       run: ls -R
@@ -43,5 +58,5 @@ jobs:
 
       
     # Runs a single command using the runners shell
-    - name: Send greeting
+    - name: Run Regression Tests Created By RBSK
       run: npm run test:withreport
