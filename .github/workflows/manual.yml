@@ -30,9 +30,12 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v3
-      
+
     - name: Print the current working directory
       run: pwd
+
+    - name: List files in the working directory where GHA sees
+      run: ls -la /home/runner/work/PLAYWRIGHT_CUCUMBER_TS/PLAYWRIGHT_CUCUMBER_TS
 
     - name: Print path to package.json
       run: find . -name 'package.json'

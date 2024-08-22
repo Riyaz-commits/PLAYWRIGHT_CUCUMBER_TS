@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: List files in the working directory where GHA sees
+      run: ls -la /home/runner/work/PLAYWRIGHT_CUCUMBER_TS
+
     - name: List files in the working directory
       run: ls -R
 
