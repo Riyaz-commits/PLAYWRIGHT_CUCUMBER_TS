@@ -37,11 +37,14 @@ jobs:
 
     - name: Install dependencies
       run: npm install  # Use npm install if package-lock.json is not present
+      working-directory: ./PLAYWRIGHT_CUCUMBER_TS
 
     - name: Install dependencies
       run: npm ci
+      working-directory: ./PLAYWRIGHT_CUCUMBER_TS
 
       
     # Runs a single command using the runners shell
-    - name: Send greeting
+    - name: Run Regression Tests Created By RBSK
       run: npm run test:withreport
+      working-directory: ./PLAYWRIGHT_CUCUMBER_TS
