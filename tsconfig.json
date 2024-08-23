@@ -1,8 +1,13 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
         "typeRoots": [
             "./node_modules/@types",
-            "src/helper/types"
+            "src/helper/types",
+           
         ]
     }
 }

@@ -4,14 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "npx ts-node src/helper/init.ts",
-    "test": "cross-env ENV=stage cucumber-js test --config=config/cucumber.js || true ",
-    "posttest": "npx ts-node src/helper/report.ts",
+    "pretest": "npx ts-node src/helper/report/init.ts",
+    "test": "cross-env ENV=stage cucumber-js --config=config/cucumber.js || true ",
+    "posttest": "npx ts-node src/helper/report/report.ts",
     "test:withreport": "npm test || npm run posttest",
     "test:failed": "cucumber-js -p rerun @rerun.txt || npm run posttest",
     "test:rerun": "npm run test:failed && npm run posttest || npm run posttest"
   },
-  "keywords": [],
+  "keywords": [
+    "cucumber",
+    "cucumber - TS",
+    "playwright - cucumber"
+  ],
   "author": "Riyaz Basha Shaik",
   "license": "ISC",
   "devDependencies": {

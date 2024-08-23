@@ -3,7 +3,7 @@ module.exports = {
       tags: process.env.npm_config_TAGS || "",
       formatOptions: {
         snippetInterface: "async-await"
-      },
+      }, 
       paths: [
         "src/test/features/"
       ],
