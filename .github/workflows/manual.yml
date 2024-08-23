@@ -59,6 +59,19 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
+    - name: INstall playwright
+      run: npx playwright install  
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Cucumber tests
+      run: npm run test
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: Report
+        path: test-results
+        retention-days: 2
+
     # Runs a single command using the runners shell
     - name: Run Regression Tests Created By RBSK
       run: npm run test:withreport
