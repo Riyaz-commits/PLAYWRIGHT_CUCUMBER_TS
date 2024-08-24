@@ -1,6 +1,7 @@
 module.exports = {
     default: {
       tags: process.env.npm_config_TAGS || "",
+   default: `--timeout 10000`,
       formatOptions: {
         snippetInterface: "async-await"
       }, 

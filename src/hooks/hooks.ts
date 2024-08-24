@@ -75,6 +75,7 @@ After(async function ({ pickle, result }) {
     }
     await context.tracing.stop({ path: path });
     await fixture.page.close();
+
     await context.close();
     if (result?.status == Status.PASSED || result?.status == Status.FAILED) {
         await this.attach(
