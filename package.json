@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npx ts-node src/helper/report/init.ts",
+    "testwithTags": "cross-env ENV=stage cucumber-js --config=config/cucumber.js || true ",
     "test": "cross-env ENV=stage cucumber-js --config=config/cucumber.js || true ",
     "posttest": "npx ts-node src/helper/report/report.ts",
     "test:withreport": "npm test || npm run posttest",
